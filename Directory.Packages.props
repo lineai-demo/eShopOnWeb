@@ -35,7 +35,7 @@
     <PackageVersion Include="Microsoft.Extensions.Identity.Core" Version="$(AspNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Configuration" Version="8.0.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
-    <PackageVersion Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+    <PackageVersion Include="Microsoft.Web.LibraryManager.Build" Version="3.0.114" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EntityFramworkCoreVersion)">
