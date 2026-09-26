@@ -17,7 +17,6 @@
     <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.5.2" />
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />
     <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageVersion Include="BlazorInputFile" Version="0.2.0" />
     <PackageVersion Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageVersion Include="BuildBundlerMinifier" Version="3.2.449" PrivateAssets="All" />
     <PackageVersion Include="FluentValidation" Version="11.12.0" />
@@ -36,6 +35,7 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Configuration" Version="$(SystemExtensionVersion)" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="$(VSCodeGeneratorVersion)" />
     <PackageVersion Include="Microsoft.Web.LibraryManager.Build" Version="3.0.114" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="5.2.3" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EntityFramworkCoreVersion)">

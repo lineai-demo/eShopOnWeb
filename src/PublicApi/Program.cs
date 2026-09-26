@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using BlazorShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,12 +22,33 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MinimalApi.Endpoint;
 using MinimalApi.Endpoint.Configurations.Extensions;
 using MinimalApi.Endpoint.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpoints();
+// MinimalApi.Endpoint's own AddEndpoints() calls Assembly.GetTypes() directly on every
+// loaded assembly; a single assembly that fails to fully load (ReflectionTypeLoadException)
+// aborts discovery for the whole app. Scan defensively instead, keeping whatever types did load.
+foreach (var endpointType in AppDomain.CurrentDomain.GetAssemblies()
+    .SelectMany(GetLoadableTypes)
+    .Where(t => !t.IsInterface && t.GetInterfaces().Contains(typeof(IEndpoint))))
+{
+    builder.Services.AddScoped(typeof(IEndpoint), endpointType);
+}
+
+static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
+{
+    try
+    {
+        return assembly.GetTypes();
+    }
+    catch (ReflectionTypeLoadException ex)
+    {
+        return ex.Types.Where(t => t is not null)!;
+    }
+}
 
 // Use to force loading of appsettings.json of test project
 builder.Configuration.AddConfigurationFile("appsettings.test.json");
