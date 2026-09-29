@@ -35,7 +35,7 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Configuration" Version="$(SystemExtensionVersion)" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="$(VSCodeGeneratorVersion)" />
     <PackageVersion Include="Microsoft.Web.LibraryManager.Build" Version="3.0.114" />
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="5.2.3" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.1.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(EntityFramworkCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EntityFramworkCoreVersion)">
